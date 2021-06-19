@@ -42,10 +42,10 @@ def handle_message(event):
         s = 'Hi 我在，我是 うた 的點餐機器人'
     elif msg in ['我想點餐', '我要點餐', '注文', '注文する', '點餐', '注文します']:
         s = '沒問題，想吃什麼?'
-    elif msg in ['我愛你', 'i love u', 'I love you', 'love u', '好き', '大好き']:
+    elif msg in ['我愛你', 'i love u', 'I love you', 'love u', '好き', '大好き', '我愛妳']:
         s = '我也愛你'
     else: 
-        s = '好的' + msg + '一份'
+        s = '好的' + msg + '一份\n'
         s += '有任何問題請聯絡 佐々木旬 !, \n電話番号: +886937209347, \nemail: linooohon@gmail.com, \n 回覆有誤的話，請見諒, 只是小小練習機器人, love you ❤️'
     line_bot_api.reply_message(
         event.reply_token,
