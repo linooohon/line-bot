@@ -38,10 +38,14 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if msg in ['在嗎', 'Hi', 'hi']:
-        s = 'hi 我在，我是聊天機器人'
+    if msg in ['在嗎', 'Hi', 'hi', 'もしもし', 'おはよ', 'ohayo', '你好', '早安', '哈囉', '妳好', '午安', '晚安']:
+        s = 'Hi 我在，我是 うた 的點餐機器人'
+    elif msg in ['我想點餐', '我要點餐', '注文', '注文する', '點餐', '注文します']:
+        s = '沒問題，想吃什麼?'
     else: 
-        s = '不好意思我現在不在'
+        s = '好的' + msg + '一份'
+
+    s += '有任何問題請聯絡 佐々木旬 !, \n電話番号: +886937209347, \nemail: linooohon@gmail.com, \n 回覆有誤的話，請見諒, 只是小小練習機器人, love you ❤️'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=s))
